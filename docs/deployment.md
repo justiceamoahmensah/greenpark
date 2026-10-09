@@ -1,8 +1,8 @@
 # Netlify deployment
 
 This application deploys as one Netlify site from the GitHub repository. The
-root-level `netlify.toml` sets `apps/web` as the base directory and configures
-the Next.js build output.
+root-level `netlify.toml` sets `apps/web` as the base directory, configures the
+Next.js build output, and explicitly enables Netlify's Next.js runtime adapter.
 
 1. Import the repository into Netlify, or connect the existing Netlify site to it.
 2. Keep the build settings from `netlify.toml`.
