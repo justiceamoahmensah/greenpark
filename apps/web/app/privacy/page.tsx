@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { AlertTriangle } from "lucide-react";
 import { SiteChrome } from "@/components/site/SiteChrome";
 import { getPublicConfig } from "@/lib/public-config";
 
-export const metadata: Metadata = { title: "Privacy policy template" };
+export const metadata: Metadata = { title: "Privacy Policy" };
 
 const sections = [
   {
@@ -12,15 +11,15 @@ const sections = [
   },
   {
     title: "Why we collect it",
-    body: "The intended purpose is to record, understand, and respond to your specific property enquiry. The business must document its lawful basis and any additional uses before production.",
+    body: "We use this information to understand and respond to your property enquiry, arrange requested services, and communicate with you using your preferred contact method.",
   },
   {
     title: "Storage and access",
-    body: "After a successful submission, the twelve answers are stored in a restricted Google Sheet accessed through a server-side Google service account. The browser never receives the service-account credentials. Access should be limited to authorized staff and reviewed regularly.",
+    body: "Submitted enquiries are stored securely and are accessible only to authorized team members who need the information to assist you.",
   },
   {
     title: "Draft recovery",
-    body: "Before submission, a temporary draft is kept only in this browser tab's session storage so a refresh does not erase your progress. It is not the authoritative submitted record and can be cleared by choosing Start over or closing the browser session.",
+    body: "Before submission, your progress is saved temporarily in your current browser session so a refresh does not erase your answers. You can clear it by choosing Start over or closing the session.",
   },
   {
     title: "Contact preference and permission",
@@ -28,11 +27,11 @@ const sections = [
   },
   {
     title: "Retention",
-    body: "The business must insert its approved retention period and deletion process here. Google Sheet rows should not be retained longer than necessary for the stated purpose.",
+    body: "We retain enquiry information only for as long as reasonably needed to respond to and manage the enquiry, subject to applicable legal requirements.",
   },
   {
     title: "Correction and deletion requests",
-    body: "The business must confirm the identity-check process and contact channel customers can use to request access, correction, or deletion, subject to applicable law.",
+    body: "You may contact us to request access to, correction of, or deletion of your information, subject to applicable legal requirements.",
   },
 ];
 
@@ -42,11 +41,8 @@ export default function PrivacyPage() {
     <SiteChrome companyName={config.company_name} email={config.contact_email} phone={config.contact_phone_display} website={config.website_url}>
       <article className="mx-auto max-w-4xl px-5 pb-20 pt-10 sm:px-8 md:pt-16">
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">Privacy</p>
-        <h1 className="mt-3 font-display text-5xl leading-tight sm:text-6xl">Privacy policy template</h1>
-        <div className="mt-6 flex gap-3 rounded-2xl border border-gold/35 bg-white p-4 text-sm leading-6 text-navy">
-          <AlertTriangle className="mt-0.5 size-5 shrink-0 text-gold" aria-hidden="true" />
-          <p><strong>Legal and business approval required.</strong> This editable template is not a finalized legal notice. Replace placeholders and verify the policy against the operating company, jurisdiction, and actual practices before launch.</p>
-        </div>
+        <h1 className="mt-3 font-display text-5xl leading-tight sm:text-6xl">Privacy Policy</h1>
+        <p className="mt-5 max-w-2xl leading-7 text-muted">This policy explains how {config.company_name} handles information submitted through this enquiry form.</p>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {sections.map((section) => (
@@ -60,7 +56,7 @@ export default function PrivacyPage() {
         <section className="mt-6 rounded-3xl bg-navy p-6 text-white sm:p-8">
           <h2 className="font-display text-3xl">Privacy contact</h2>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-white/75">
-            Replace this placeholder contact with the approved privacy contact before production. Current public contact: {config.contact_email || config.contact_phone_display || config.website_url}.
+            For privacy questions or requests, contact us at {config.contact_email || config.contact_phone_display || config.website_url}.
           </p>
         </section>
       </article>

@@ -38,7 +38,7 @@ export function SuccessPageClient() {
       <SiteChrome companyName={config.company_name} email={config.contact_email} phone={config.contact_phone_display} website={config.website_url}>
         <div className="mx-auto max-w-xl px-5 py-24 text-center">
           <h1 className="font-display text-5xl">No confirmed submission found</h1>
-          <p className="mt-4 leading-relaxed text-muted">This page only confirms an enquiry after Google Sheets acknowledges it in this browser session.</p>
+          <p className="mt-4 leading-relaxed text-muted">We could not find a recently completed enquiry. You can begin a new one below.</p>
           <Link href="/enquire" className="mt-8 inline-flex rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white">Start an enquiry</Link>
         </div>
       </SiteChrome>

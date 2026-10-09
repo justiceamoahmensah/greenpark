@@ -61,7 +61,7 @@ export const QUESTIONS: Question[] = [
         .map((item) => ({
           value: item.slug,
           label: item.name,
-          hint: item.sample ? "Sample catalogue" : item.description,
+          hint: item.description,
         })),
   },
   {
@@ -84,7 +84,7 @@ export const QUESTIONS: Question[] = [
     prompt: "What is your estimated property budget in USD?",
     kind: "cards",
     required: true,
-    description: "These sample ranges are illustrative and can be configured for the business.",
+    description: "Choose the range that best matches your planned investment.",
     options: (config) => config.budget_ranges.map((value) => ({ value, label: value })),
   },
   {

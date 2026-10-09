@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, MessageCircle, MousePointerClick, Send, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, MessageCircle, MousePointerClick, Send } from "lucide-react";
 import type { Development, PublicConfig } from "@/lib/types";
 
 export function WelcomeScreen({
@@ -14,11 +14,11 @@ export function WelcomeScreen({
   invalidDevelopment: boolean;
   startHref: string;
 }) {
-  const image = development?.image_url || "/developments/sample-hero.png";
+  const image = development?.image_url || "/developments/haven-gardens-hero.webp";
   const eyebrow = development ? "Development enquiry" : "Private property enquiry";
   const intro = development
     ? development.description
-    : "Share what matters to you in twelve thoughtful steps, and help the property team prepare a more relevant conversation.";
+    : "Tell us what you are looking for and our team will follow up with property options that suit your needs.";
 
   return (
     <div className="overflow-hidden">
@@ -33,11 +33,6 @@ export function WelcomeScreen({
           {development ? <h2 className="mt-6 font-display text-2xl text-navy">Exploring {development.name}</h2> : null}
           <p className="mt-5 max-w-xl text-base leading-7 text-muted sm:text-lg">{intro}</p>
 
-          {development?.sample ? (
-            <p className="mt-4 inline-flex items-center gap-2 text-xs font-medium text-muted">
-              <ShieldCheck className="size-4 text-gold" aria-hidden="true" /> Sample catalogue entry—not a live listing.
-            </p>
-          ) : null}
           {invalidDevelopment ? (
             <p className="mt-4 rounded-xl border border-gold/40 bg-white/70 px-4 py-3 text-sm text-navy" role="status">
               That development link is not active. You can still use the general enquiry.
@@ -59,23 +54,19 @@ export function WelcomeScreen({
             )}
           </div>
           <p className="mt-5 flex items-center gap-2 text-xs text-muted">
-            <CheckCircle2 className="size-4 text-gold" aria-hidden="true" /> No account required. Your draft stays in this browser session.
+            <CheckCircle2 className="size-4 text-gold" aria-hidden="true" /> It only takes a few minutes to complete.
           </p>
         </div>
 
         <div className="relative min-h-[390px] overflow-hidden rounded-[2rem] bg-navy shadow-[0_30px_80px_rgba(16,43,70,0.22)] md:min-h-[600px]">
           <Image
             src={image}
-            alt={development ? `Sample visual for ${development.name}` : "Sample contemporary residence at twilight"}
+            alt={development ? `${development.name} development` : "Haven Gardens development in Adjiringanor"}
             fill
             priority
-            className="object-cover"
+            className="object-cover object-center"
             sizes="(min-width: 768px) 56vw, 100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy/55 via-transparent to-transparent" />
-          <p className="absolute bottom-5 left-5 rounded-full bg-navy/65 px-3 py-1.5 text-xs text-white/85 backdrop-blur-md">
-            Sample imagery · Replace before launch
-          </p>
         </div>
       </section>
 
@@ -87,7 +78,7 @@ export function WelcomeScreen({
             {[
               { icon: MousePointerClick, number: "01", title: "Tell us what fits", copy: "Answer twelve short questions, one at a time, with the freedom to go back." },
               { icon: CheckCircle2, number: "02", title: "Review every detail", copy: "Check and edit your answers before anything is sent to the property team." },
-              { icon: Send, number: "03", title: "Submit securely", copy: "Your enquiry is confirmed only after Google Sheets acknowledges the save." },
+              { icon: Send, number: "03", title: "Send your enquiry", copy: "Once submitted, our team receives your enquiry and will follow up with you." },
             ].map(({ icon: Icon, number, title, copy }) => (
               <article key={number} className="group rounded-3xl border border-navy/8 bg-white p-6 shadow-[0_12px_35px_rgba(16,43,70,0.05)] transition hover:-translate-y-1 hover:border-gold/50">
                 <div className="flex items-center justify-between">
@@ -102,11 +93,6 @@ export function WelcomeScreen({
         </div>
       </section>
 
-      {config.placeholder_brand ? (
-        <p className="mx-auto max-w-7xl px-5 py-5 text-center text-xs text-muted sm:px-8">
-          Preview brand and sample imagery. Replace the company identity, catalogue, and approved photography before production.
-        </p>
-      ) : null}
     </div>
   );
 }

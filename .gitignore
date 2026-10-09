@@ -17,3 +17,6 @@ var/
 .vercel
 dist/
 coverage/
+
+# Local Netlify folder
+.netlify

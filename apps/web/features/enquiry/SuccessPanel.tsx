@@ -13,20 +13,19 @@ export function SuccessPanel({ submission }: { submission: Submission }) {
         Thank you{submission.first_name ? `, ${submission.first_name}` : ""}.
       </h1>
       <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-muted">
-        Google Sheets acknowledged your enquiry. The property team can now review the details you provided.
+        Your enquiry has been received and our property team can now review the details you provided.
       </p>
 
       <div className="mx-auto mt-9 max-w-lg rounded-3xl border border-navy/8 bg-white p-6 text-left shadow-[0_14px_40px_rgba(16,43,70,0.06)]">
         <h2 className="font-display text-2xl">What happens next</h2>
         {submission.may_we_contact_you === "No" ? (
           <p className="mt-3 text-sm leading-6 text-muted">
-            You asked the sales team not to contact you, so they should not begin a follow-up. You may still start a
+            We will respect your preference not to be contacted. You may still start a
             conversation yourself using the optional WhatsApp link below.
           </p>
         ) : (
           <p className="mt-3 text-sm leading-6 text-muted">
-            The sales team may follow up about this enquiry using the contact method you selected. No response time
-            is guaranteed.
+            A member of our sales team will follow up about this enquiry using the contact method you selected.
           </p>
         )}
       </div>

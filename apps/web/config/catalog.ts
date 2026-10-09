@@ -67,7 +67,7 @@ export const DEVELOPMENTS: Development[] = [
     slug: "haven-gardens-adjiringanor",
     name: "Haven Gardens - Adjiringanor",
     description: "Apartments, penthouses and townhouses in Adjiringanor, Accra.",
-    image_url: "/developments/development-a.svg",
+    image_url: "/developments/haven-gardens-hero.webp",
     active: true,
     sample: false,
     selectable: true,

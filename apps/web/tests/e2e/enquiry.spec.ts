@@ -128,8 +128,8 @@ test("customer can review, recover from a failed save, and only then see success
   });
   await page.getByTestId("submit").dblclick();
   await expect(page).toHaveURL(/\/enquire\/success/);
-  await expect(page.getByTestId("success")).toContainText("Google Sheets acknowledged your enquiry");
-  await expect(page.getByTestId("success")).toContainText("not to contact you");
+  await expect(page.getByTestId("success")).toContainText("Your enquiry has been received");
+  await expect(page.getByTestId("success")).toContainText("preference not to be contacted");
   expect(posts).toBe(1);
 });
 
