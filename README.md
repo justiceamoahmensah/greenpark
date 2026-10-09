@@ -45,7 +45,10 @@ PUBLIC_BASE_URL=https://example.com npm run generate:qrs
 
 ## Deploy
 
-Create one Vercel project with **Root Directory** set to `apps/web`, add the server-only environment variables documented in [apps/web/.env.example](apps/web/.env.example), and deploy. See [docs/deployment.md](docs/deployment.md).
+For Netlify, connect the GitHub repository normally. The committed `netlify.toml`
+points Netlify at the Next.js application in `apps/web`. Add the server-only
+environment variables documented in [apps/web/.env.example](apps/web/.env.example),
+then deploy. See [docs/deployment.md](docs/deployment.md).
 
 ## Before production
 
